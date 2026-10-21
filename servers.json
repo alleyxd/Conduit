@@ -1,0 +1,10 @@
+{
+  "servers": {
+    "files": {"command": "python", "args": ["servers/files.py", "examples/docs"],
+              "about": "the company's policy documents (shipping, returns, loyalty, product FAQs)"},
+    "shop": {"command": "python", "args": ["servers/sqlite.py", "examples/shop.db"],
+             "about": "the shop's sales database (customers, products, orders, order items)"},
+    "web": {"command": "python", "args": ["servers/web.py"], "about": "fetch public web pages"}
+  },
+  "model": {"name": "local"}
+}

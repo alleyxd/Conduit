@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.pytest_cache/
+traces/
+examples/shop.db
+evals/think_run.log
+*.egg-info/

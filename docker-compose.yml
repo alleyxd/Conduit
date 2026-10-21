@@ -1,0 +1,23 @@
+services:
+  llm:
+    image: vllm/vllm-openai:latest
+    command: >
+      --model Qwen/Qwen3-8B --served-model-name local --max-model-len 16384
+      --gpu-memory-utilization 0.65 --enable-auto-tool-choice --tool-call-parser hermes --reasoning-parser qwen3
+    environment:
+      - VLLM_WSL2_ENABLE_PIN_MEMORY=1   # needed on Docker Desktop / WSL2, harmless elsewhere
+    ports: ["8000:8000"]
+    ipc: host
+    volumes:
+      - ${HF_HOME:-~/.cache/huggingface}:/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices: [{ driver: nvidia, count: all, capabilities: [gpu] }]
+
+  agent:
+    build: .
+    depends_on: [llm]
+    environment:
+      - CONDUIT_BASE_URL=http://llm:8000/v1
+    profiles: [cli]

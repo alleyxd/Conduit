@@ -1,0 +1,377 @@
+{
+ "summary": {
+  "mode": "fast",
+  "model": "local",
+  "runs": 36,
+  "success": 0.472,
+  "median_seconds": 1.4449999999999998,
+  "mean_tool_calls": 3.83,
+  "by_kind": {
+   "db": 0.6,
+   "db+docs": 0.333,
+   "docs": 0.417
+  }
+ },
+ "runs": [
+  {
+   "id": "top_march",
+   "kind": "db",
+   "ok": false,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 2.57,
+   "tokens": 5136,
+   "answer": "The customer who spent the most on delivered orders in March 2026 is customer ID 27, with a total of $1004.00."
+  },
+  {
+   "id": "top_march",
+   "kind": "db",
+   "ok": false,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 2.26,
+   "tokens": 5137,
+   "answer": "The customer who spent the most on delivered orders in March 2026 is customer ID 27, with a total spending of $1004.00."
+  },
+  {
+   "id": "top_march",
+   "kind": "db",
+   "ok": false,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 2.25,
+   "tokens": 5137,
+   "answer": "The customer who spent the most on delivered orders in March 2026 is customer ID 27, with a total spending of $1004.00."
+  },
+  {
+   "id": "top_june_ship",
+   "kind": "db+docs",
+   "ok": false,
+   "steps": 8,
+   "tool_calls": 7,
+   "seconds": 3.41,
+   "tokens": 9454,
+   "answer": "The top spender on delivered orders in June 2026 was customer ID 31, who spent $1435.00. Under the shipping policy, orders over $150 (before tax) ship free. Since $1435.00 is over $150, the order would ship free."
+  },
+  {
+   "id": "top_june_ship",
+   "kind": "db+docs",
+   "ok": false,
+   "steps": 8,
+   "tool_calls": 7,
+   "seconds": 3.4,
+   "tokens": 9456,
+   "answer": "The top spender on delivered orders in June 2026 was customer ID 31, with a total spending of $1435.00. Under the shipping policy, orders over $150 (before tax) ship free. Since $1435.00 exceeds $150, the order would ship free."
+  },
+  {
+   "id": "top_june_ship",
+   "kind": "db+docs",
+   "ok": false,
+   "steps": 8,
+   "tool_calls": 7,
+   "seconds": 3.41,
+   "tokens": 9457,
+   "answer": "The top spender on delivered orders in June 2026 was customer ID 31, with a total of $1,435.00. Under the shipping policy, orders over $150 (before tax) ship free. Since $1,435.00 exceeds $150, the order would ship free."
+  },
+  {
+   "id": "returned_count",
+   "kind": "db",
+   "ok": true,
+   "steps": 2,
+   "tool_calls": 1,
+   "seconds": 0.5,
+   "tokens": 1744,
+   "answer": "There are 30 orders with the status 'returned'."
+  },
+  {
+   "id": "returned_count",
+   "kind": "db",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 0.96,
+   "tokens": 3719,
+   "answer": "There are 30 orders with the status 'returned'."
+  },
+  {
+   "id": "returned_count",
+   "kind": "db",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 0.96,
+   "tokens": 3719,
+   "answer": "There are 30 orders with the status 'returned'."
+  },
+  {
+   "id": "best_seller",
+   "kind": "db",
+   "ok": false,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 1.26,
+   "tokens": 3788,
+   "answer": "The product with the most units sold is product ID 6, with a total of 125 units sold."
+  },
+  {
+   "id": "best_seller",
+   "kind": "db",
+   "ok": false,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 1.25,
+   "tokens": 3786,
+   "answer": "The product with the highest unit sales is product ID 6, which has sold 125 units."
+  },
+  {
+   "id": "best_seller",
+   "kind": "db",
+   "ok": false,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 1.29,
+   "tokens": 3790,
+   "answer": "The product with the highest number of units sold is product ID 6, with a total of 125 units sold."
+  },
+  {
+   "id": "top_city",
+   "kind": "db",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 1.07,
+   "tokens": 3737,
+   "answer": "The city with the most customers is Ottawa, with 9 customers."
+  },
+  {
+   "id": "top_city",
+   "kind": "db",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 1.07,
+   "tokens": 3737,
+   "answer": "The city with the most customers is Ottawa, with 9 customers."
+  },
+  {
+   "id": "top_city",
+   "kind": "db",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 1.06,
+   "tokens": 3737,
+   "answer": "The city with the most customers is Ottawa, with 9 customers."
+  },
+  {
+   "id": "outerwear_rev",
+   "kind": "db",
+   "ok": true,
+   "steps": 6,
+   "tool_calls": 5,
+   "seconds": 2.05,
+   "tokens": 6295,
+   "answer": "The total revenue from delivered orders in the outerwear category is $29,654.00."
+  },
+  {
+   "id": "outerwear_rev",
+   "kind": "db",
+   "ok": true,
+   "steps": 6,
+   "tool_calls": 5,
+   "seconds": 2.02,
+   "tokens": 6295,
+   "answer": "The total revenue from delivered orders in the outerwear category is $29,654.00."
+  },
+  {
+   "id": "outerwear_rev",
+   "kind": "db",
+   "ok": true,
+   "steps": 6,
+   "tool_calls": 5,
+   "seconds": 2.04,
+   "tokens": 6295,
+   "answer": "The total revenue from delivered orders in the outerwear category is $29,654.00."
+  },
+  {
+   "id": "shoe_returns",
+   "kind": "docs",
+   "ok": false,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 1.45,
+   "tokens": 4598,
+   "answer": "I couldn't find any information about the return policy for trail running shoes in the provided documents. Please check the shop's return policy page or contact customer support for more details."
+  },
+  {
+   "id": "shoe_returns",
+   "kind": "docs",
+   "ok": false,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 1.44,
+   "tokens": 4597,
+   "answer": "I couldn't find any information about the return policy for trail running shoes in the provided documents. Please check the shop's return policy or contact customer support for more details."
+  },
+  {
+   "id": "shoe_returns",
+   "kind": "docs",
+   "ok": false,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 1.43,
+   "tokens": 4597,
+   "answer": "I couldn't find any information about the return policy for trail running shoes in the provided documents. Please check the shop's return policy or contact customer support for more details."
+  },
+  {
+   "id": "gold",
+   "kind": "docs",
+   "ok": false,
+   "steps": 6,
+   "tool_calls": 5,
+   "seconds": 1.82,
+   "tokens": 5727,
+   "answer": "I couldn't find any information about loyalty points needed for Gold status or the associated discount in the available documents. Please check the provided resources or contact support for more details."
+  },
+  {
+   "id": "gold",
+   "kind": "docs",
+   "ok": false,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 1.55,
+   "tokens": 4668,
+   "answer": "I couldn't find any information about loyalty points required for Gold status or the associated discount in the provided documents. Please check if there are other sources or documents that might contain this information."
+  },
+  {
+   "id": "gold",
+   "kind": "docs",
+   "ok": false,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 1.51,
+   "tokens": 4659,
+   "answer": "I couldn't find any information about the number of loyalty points needed for Gold status or the associated discount in the provided documents. Please check the documents again or provide more specific details."
+  },
+  {
+   "id": "stove_flight",
+   "kind": "docs",
+   "ok": true,
+   "steps": 3,
+   "tool_calls": 2,
+   "seconds": 1.01,
+   "tokens": 2795,
+   "answer": "The provided documents do not contain specific information about whether the Camp Stove can be taken on a plane. For detailed guidance on air travel restrictions for camping equipment, it is recommended to check with the airline or relevant aviation authority."
+  },
+  {
+   "id": "stove_flight",
+   "kind": "docs",
+   "ok": false,
+   "steps": 3,
+   "tool_calls": 2,
+   "seconds": 1.75,
+   "tokens": 2698,
+   "answer": "I'm unable to fetch the information due to an error. Please try again later or check the URL directly in your browser."
+  },
+  {
+   "id": "stove_flight",
+   "kind": "docs",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 1.74,
+   "tokens": 3874,
+   "answer": "I cannot access the web to check the latest information about carrying items on airplanes. However, based on the available information, the Camp Stove's compatibility with airline travel depends on specific airline policies and regulations. You should check directly with your airline or the Transportation Security Administration (TSA) for the most accurate guidance."
+  },
+  {
+   "id": "small_order_ship",
+   "kind": "docs",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 0.95,
+   "tokens": 3672,
+   "answer": "The shipping cost for a $40 order is a flat $12."
+  },
+  {
+   "id": "small_order_ship",
+   "kind": "docs",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 0.94,
+   "tokens": 3672,
+   "answer": "The shipping cost for a $40 order is a flat $12."
+  },
+  {
+   "id": "small_order_ship",
+   "kind": "docs",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 0.94,
+   "tokens": 3672,
+   "answer": "The shipping cost for a $40 order is a flat $12."
+  },
+  {
+   "id": "stove_ship",
+   "kind": "db+docs",
+   "ok": true,
+   "steps": 3,
+   "tool_calls": 2,
+   "seconds": 0.96,
+   "tokens": 2752,
+   "answer": "The shipping policy states that orders over $150 (before tax) ship free anywhere in Canada. Since two Camp Stoves would total more than $150, your order would ship free."
+  },
+  {
+   "id": "stove_ship",
+   "kind": "db+docs",
+   "ok": true,
+   "steps": 3,
+   "tool_calls": 2,
+   "seconds": 1.09,
+   "tokens": 2765,
+   "answer": "The shipping policy states that orders over $150 (before tax) ship free anywhere in Canada. Since two Camp Stoves would total more than $150, your order would qualify for free shipping. \n\nAnswer: Yes, your order would ship free."
+  },
+  {
+   "id": "stove_ship",
+   "kind": "db+docs",
+   "ok": true,
+   "steps": 3,
+   "tool_calls": 2,
+   "seconds": 1.11,
+   "tokens": 2767,
+   "answer": "The shipping policy states that orders over $150 (before tax) ship free anywhere in Canada. Since two Camp Stoves would likely exceed this threshold, your order would ship free. If you're unsure of the total, please provide the price of one Camp Stove."
+  },
+  {
+   "id": "gold_customer",
+   "kind": "db+docs",
+   "ok": false,
+   "steps": 7,
+   "tool_calls": 6,
+   "seconds": 2.64,
+   "tokens": 7850,
+   "answer": "The customer who spent the most on delivered orders in 2026 is Mateo Garcia, and he reached the Gold loyalty status."
+  },
+  {
+   "id": "gold_customer",
+   "kind": "db+docs",
+   "ok": false,
+   "steps": 7,
+   "tool_calls": 6,
+   "seconds": 2.71,
+   "tokens": 7889,
+   "answer": "The customer who spent the most on delivered orders in 2026 is Mateo Garcia. He reached the Gold loyalty status."
+  },
+  {
+   "id": "gold_customer",
+   "kind": "db+docs",
+   "ok": false,
+   "steps": 7,
+   "tool_calls": 6,
+   "seconds": 2.72,
+   "tokens": 7858,
+   "answer": "The customer who spent the most on delivered orders in 2026 is Mateo Garcia. However, there is no information provided about whether he reached the Gold loyalty status."
+  }
+ ]
+}

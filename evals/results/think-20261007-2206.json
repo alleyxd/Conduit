@@ -1,0 +1,377 @@
+{
+ "summary": {
+  "mode": "think",
+  "model": "local",
+  "runs": 36,
+  "success": 0.889,
+  "median_seconds": 20.765,
+  "mean_tool_calls": 4.28,
+  "by_kind": {
+   "db": 1,
+   "db+docs": 0.778,
+   "docs": 0.833
+  }
+ },
+ "runs": [
+  {
+   "id": "top_march",
+   "kind": "db",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 5,
+   "seconds": 22.64,
+   "tokens": 6397,
+   "answer": "The customer who spent the most on delivered orders in March 2026 is **Yusuf Patel**, with a total of **$1004.00**. \n\nThis was determined by aggregating the total spending from delivered orders (status = 'delivered') placed between March 1, 2026, and March 31, 2026, and grouping the results by customer."
+  },
+  {
+   "id": "top_march",
+   "kind": "db",
+   "ok": true,
+   "steps": 6,
+   "tool_calls": 5,
+   "seconds": 46.61,
+   "tokens": 10782,
+   "answer": "The customer who spent the most on delivered orders in March 2026 is **Yusuf Patel**, with a total spending of **$1004.00**. \n\nThis was determined by:\n1. Joining `orders`, `order_items`, and `customers` tables.\n2. Filtering orders placed in March 2026 (`placed BETWEEN '2026-03-01' AND '2026-03-31'`) with status `delivered`.\n3. Summing the total spending per customer (`SUM(oi.qty * oi.unit_price)`)"
+  },
+  {
+   "id": "top_march",
+   "kind": "db",
+   "ok": true,
+   "steps": 5,
+   "tool_calls": 5,
+   "seconds": 35.11,
+   "tokens": 8699,
+   "answer": "The customer who spent the most on delivered orders in March 2026 is **Yusuf Patel**, with a total of **$1004.00**. \n\nThis was determined by:\n1. Joining `orders`, `order_items`, and `customers` tables.\n2. Filtering for orders with status \"delivered\" placed in March 2026.\n3. Summing the total spending (`qty * unit_price`) per customer.\n4. Sorting by total spending in descending order and selecting "
+  },
+  {
+   "id": "top_june_ship",
+   "kind": "db+docs",
+   "ok": true,
+   "steps": 11,
+   "tool_calls": 10,
+   "seconds": 53.43,
+   "tokens": 19940,
+   "answer": "The top spender on delivered orders in June 2026 was **Mateo Ali** with a total of $1,435.00. \n\nUnder the shipping policy, orders over $150 (before tax) ship free anywhere in Canada. Since $1,435.00 exceeds the $150 threshold, **this order would ship free**. \n\n**Answer:** Mateo Ali; yes, the order would ship free."
+  },
+  {
+   "id": "top_june_ship",
+   "kind": "db+docs",
+   "ok": true,
+   "steps": 7,
+   "tool_calls": 6,
+   "seconds": 38.52,
+   "tokens": 11606,
+   "answer": "The top spender on delivered orders in June 2026 was **Mateo Ali**, with a total spending of **$1,435.00**. \n\nTo determine if this total qualifies for free shipping, we check the shipping policy. A search of the company's policy documents reveals the **shipping policy** states: \"Free shipping on orders over $150.\" Since $1,435.00 exceeds $150, **this order would ship free**.\n\n**Answer:**  \n- **Top"
+  },
+  {
+   "id": "top_june_ship",
+   "kind": "db+docs",
+   "ok": false,
+   "steps": 8,
+   "tool_calls": 7,
+   "seconds": 53.28,
+   "tokens": 14622,
+   "answer": "The top spender on delivered orders in June 2026 was **customer_id 31**, with a total spending of **$1,435.00**. Under the shipping policy, orders over **$150 (before tax)** ship free in Canada. Since $1,435 exceeds $150, **this order would qualify for free shipping**. \n\nAnswer: Customer ID 31 spent $1,435.00, and their order would ship free."
+  },
+  {
+   "id": "returned_count",
+   "kind": "db",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 12.65,
+   "tokens": 4961,
+   "answer": "The number of orders with the status 'returned' is 30."
+  },
+  {
+   "id": "returned_count",
+   "kind": "db",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 12.79,
+   "tokens": 4975,
+   "answer": "There are **30 orders** with the status 'returned'."
+  },
+  {
+   "id": "returned_count",
+   "kind": "db",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 11.19,
+   "tokens": 4822,
+   "answer": "The number of orders with the status 'returned' is 30."
+  },
+  {
+   "id": "best_seller",
+   "kind": "db",
+   "ok": true,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 27.95,
+   "tokens": 7652,
+   "answer": "The product with the highest unit sales is the **Insulated Bottle**, totaling **125 units** sold across all orders. \n\nThis result was obtained by aggregating quantities from the `order_items` table, joining with the `products` table to retrieve product names, and sorting by total quantity sold in descending order."
+  },
+  {
+   "id": "best_seller",
+   "kind": "db",
+   "ok": true,
+   "steps": 6,
+   "tool_calls": 5,
+   "seconds": 22.19,
+   "tokens": 8355,
+   "answer": "The product that has sold the most units across all orders is the **Insulated Bottle** with **125 units** sold. \n\nThis was determined by joining the `order_items` table (which tracks quantities sold) with the `products` table (to get product names), summing the quantities per product, and selecting the top result."
+  },
+  {
+   "id": "best_seller",
+   "kind": "db",
+   "ok": true,
+   "steps": 6,
+   "tool_calls": 5,
+   "seconds": 20.81,
+   "tokens": 8246,
+   "answer": "The product that has sold the most units across all orders is the **Insulated Bottle** with **125 units** sold. \n\nThis was determined by joining the `order_items` table (which tracks quantities sold) with the `products` table (to get product names), aggregating totals by product, and sorting in descending order of units sold."
+  },
+  {
+   "id": "top_city",
+   "kind": "db",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 11.39,
+   "tokens": 4847,
+   "answer": "The city with the most customers is **Ottawa**, which has **9 customers**. \n\nThis was determined by querying the `customers` table to count and group customers by their city, then ordering the results in descending order of count."
+  },
+  {
+   "id": "top_city",
+   "kind": "db",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 10.74,
+   "tokens": 4787,
+   "answer": "The city with the most customers is **Ottawa**, which has **9 customers**."
+  },
+  {
+   "id": "top_city",
+   "kind": "db",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 15.4,
+   "tokens": 5231,
+   "answer": "The city with the most customers is **Ottawa**, which has **9 customers**. \n\nThis was determined by grouping customers by their city, counting the number in each group, and selecting the city with the highest count."
+  },
+  {
+   "id": "outerwear_rev",
+   "kind": "db",
+   "ok": true,
+   "steps": 7,
+   "tool_calls": 6,
+   "seconds": 29.32,
+   "tokens": 10498,
+   "answer": "The total revenue from delivered orders in the outerwear category is **$29,654.00**. This was calculated by summing the quantity multiplied by the unit price for all outerwear items in delivered orders."
+  },
+  {
+   "id": "outerwear_rev",
+   "kind": "db",
+   "ok": true,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 21.56,
+   "tokens": 7069,
+   "answer": "The total revenue from delivered orders in the outerwear category is $29,654.00."
+  },
+  {
+   "id": "outerwear_rev",
+   "kind": "db",
+   "ok": true,
+   "steps": 6,
+   "tool_calls": 5,
+   "seconds": 29.44,
+   "tokens": 9092,
+   "answer": "The total revenue from delivered orders in the outerwear category is $29,654.00."
+  },
+  {
+   "id": "shoe_returns",
+   "kind": "docs",
+   "ok": true,
+   "steps": 8,
+   "tool_calls": 7,
+   "seconds": 41.67,
+   "tokens": 10244,
+   "answer": "Customers have 60 days to return trail running shoes, even if worn outdoors once, as stated in the returns policy."
+  },
+  {
+   "id": "shoe_returns",
+   "kind": "docs",
+   "ok": false,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 13.06,
+   "tokens": 5919,
+   "answer": "The return policy for trail running shoes isn't specified in the available documents or database tables. Check the website's return policy page or contact customer support for details."
+  },
+  {
+   "id": "shoe_returns",
+   "kind": "docs",
+   "ok": true,
+   "steps": 2,
+   "tool_calls": 1,
+   "seconds": 3.59,
+   "tokens": 2240,
+   "answer": "Customers have 60 days to return trail running shoes, even if worn outdoors once, as stated in the returns policy."
+  },
+  {
+   "id": "gold",
+   "kind": "docs",
+   "ok": true,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 16.79,
+   "tokens": 6329,
+   "answer": "The Loyalty program documentation states that **1,000 points** are required for Gold status, which provides a **10% discount on every order**. \n\nAnswer: 1,000 points are needed for Gold status, offering 10% off all orders."
+  },
+  {
+   "id": "gold",
+   "kind": "docs",
+   "ok": true,
+   "steps": 6,
+   "tool_calls": 5,
+   "seconds": 20.72,
+   "tokens": 7817,
+   "answer": "The Loyalty program document states that Gold status starts at **1,000 points** in a calendar year and provides a **10% discount on every order**. \n\nAnswer:  \n- **Gold status requires 1,000 loyalty points**.  \n- **Discount**: 10% off every order."
+  },
+  {
+   "id": "gold",
+   "kind": "docs",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 14.62,
+   "tokens": 5173,
+   "answer": "To qualify for Gold status, you need **1,000 loyalty points** in a calendar year. This grants a **10% discount on every order**. \n\n(Answer derived from `loyalty.md`: \"Gold status starts at 1,000 points [...] gives 10% off every order\")"
+  },
+  {
+   "id": "stove_flight",
+   "kind": "docs",
+   "ok": true,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 22.19,
+   "tokens": 6879,
+   "answer": "The shipping policy document does not address airline transportation regulations or hazardous materials. To determine if the Camp Stove can be transported on a plane, check the product's specific guidelines in the FAQ or contact customer support for details about air travel restrictions. \n\n<files__read_file path=\"faq/stoves.md\"/>"
+  },
+  {
+   "id": "stove_flight",
+   "kind": "docs",
+   "ok": false,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 19.07,
+   "tokens": 6402,
+   "answer": "The Camp Stove is generally allowed on planes **if packed properly** (e.g., in checked luggage, with fuel secured). However, **lighter fluid or flammable fuel** may require special handling or be restricted. For definitive rules, check with your airline or the FAA\u2019s guidelines on transporting camping equipment. \n\nNo specific policy was found in internal documents, so external sources like the FAA "
+  },
+  {
+   "id": "stove_flight",
+   "kind": "docs",
+   "ok": true,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 20.89,
+   "tokens": 6693,
+   "answer": "The available documents do not contain specific information about transporting the Camp Stove on a plane or hazardous materials regulations for this product. For definitive guidance, check the airline's prohibited items list or contact their customer service directly with the stove's specifications."
+  },
+  {
+   "id": "small_order_ship",
+   "kind": "docs",
+   "ok": true,
+   "steps": 3,
+   "tool_calls": 2,
+   "seconds": 8.07,
+   "tokens": 3517,
+   "answer": "The shipping cost for a $40 order is a flat fee of **$12**, as orders under $150 (before tax) incur this charge."
+  },
+  {
+   "id": "small_order_ship",
+   "kind": "docs",
+   "ok": true,
+   "steps": 3,
+   "tool_calls": 2,
+   "seconds": 7.43,
+   "tokens": 3456,
+   "answer": "The shipping cost for a $40 order is a flat fee of $12, as orders under $150 (before tax) incur this charge. \n\n**Answer:** $12."
+  },
+  {
+   "id": "small_order_ship",
+   "kind": "docs",
+   "ok": true,
+   "steps": 4,
+   "tool_calls": 3,
+   "seconds": 12.47,
+   "tokens": 4901,
+   "answer": "The shipping cost for a $40 order (before tax) is a flat fee of **$12**, as orders under $150 incur this standard shipping charge. Orders over $150 ship free within Canada. \n\n<file>shipping.md</file>"
+  },
+  {
+   "id": "stove_ship",
+   "kind": "db+docs",
+   "ok": true,
+   "steps": 3,
+   "tool_calls": 2,
+   "seconds": 12.02,
+   "tokens": 3907,
+   "answer": "The shipping policy states that orders over $150 (before tax) ship free in Canada. However, the price per Camp Stove is not provided in the available documents. To determine if two Camp Stoves qualify for free shipping, you would need to know the individual product price (e.g., from a product page or inventory system). Since this information is not accessible via the current tools, you may need to"
+  },
+  {
+   "id": "stove_ship",
+   "kind": "db+docs",
+   "ok": true,
+   "steps": 3,
+   "tool_calls": 2,
+   "seconds": 9.02,
+   "tokens": 3621,
+   "answer": "The shipping policy states that orders over $150 (before tax) ship free in Canada. To determine if two Camp Stoves qualify, we need their individual price. However, I cannot look up product pricing directly from the tools provided. Check the total price of two Camp Stoves in your cart before tax. If it meets or exceeds $150, shipping is free."
+  },
+  {
+   "id": "stove_ship",
+   "kind": "db+docs",
+   "ok": true,
+   "steps": 5,
+   "tool_calls": 4,
+   "seconds": 14.47,
+   "tokens": 6318,
+   "answer": "The total cost for two Camp Stoves is $158 (79 \u00d7 2), which exceeds the $150 threshold for free shipping in Canada. Your order would ship free. \n\nAnswer: Yes, your order ships free."
+  },
+  {
+   "id": "gold_customer",
+   "kind": "db+docs",
+   "ok": true,
+   "steps": 7,
+   "tool_calls": 6,
+   "seconds": 57.01,
+   "tokens": 13274,
+   "answer": "The customer who spent the most on delivered orders in 2026 is **Mateo Garcia** (customer ID 24) with a total of $3,965.00. However, the provided data does not include loyalty status information for customers. The `customers` table only contains `id`, `name`, `city`, and `joined` fields, and no document or table was found that defines loyalty status thresholds or assignments. Without additional da"
+  },
+  {
+   "id": "gold_customer",
+   "kind": "db+docs",
+   "ok": false,
+   "steps": 5,
+   "tool_calls": 6,
+   "seconds": 41.46,
+   "tokens": 9622,
+   "answer": "The customer who spent the most on delivered orders in 2026 is **customer_id 24** with a total of $3,965.00. To confirm if they reached Gold loyalty status, we need to check the loyalty program criteria in **loyalty.md**. Gold status typically requires a spending threshold (e.g., $3,000+ annually). Since the exact threshold isn't provided here, you would need to verify against the full loyalty pro"
+  },
+  {
+   "id": "gold_customer",
+   "kind": "db+docs",
+   "ok": true,
+   "steps": 7,
+   "tool_calls": 6,
+   "seconds": 81.01,
+   "tokens": 15435,
+   "answer": "The customer who spent the most on delivered orders in 2026 is **Mateo Garcia**, with a total spending of $3,965.00. However, the provided data does not include specific criteria for the Gold loyalty status. To determine if Mateo Garcia reached Gold status, additional details from the loyalty program rules (e.g., spending thresholds) would be required. \n\nAnswer: Mateo Garcia is the customer, but t"
+  }
+ ]
+}

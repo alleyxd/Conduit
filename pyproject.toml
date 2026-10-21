@@ -1,0 +1,22 @@
+[project]
+name = "conduit"
+version = "0.1.0"
+description = "A small, inspectable agent that answers questions with any OpenAI-compatible model and MCP tool servers."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Ali Ashter" }]
+dependencies = ["mcp>=2.3", "openai>=1.40"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+conduit = "conduit.cli:main"
+
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["conduit"]

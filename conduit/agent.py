@@ -57,6 +57,9 @@ class Agent:
             args = json.loads(call.function.arguments or "{}")
         except json.JSONDecodeError as e:
             return call, f"arguments were not valid JSON: {e}", False, 0.0
+        if not isinstance(args, dict):
+            # the MCP client rejects anything else with an exception, which would end the whole run
+            return call, "arguments must be a JSON object", False, 0.0
         t = time.time()
         text, ok = await self.pool.call(call.function.name, args)
         return call, text, ok, time.time() - t

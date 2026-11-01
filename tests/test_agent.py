@@ -97,6 +97,20 @@ def test_agent_loop_calls_tool_then_answers():
     run(go())
 
 
+def test_agent_recovers_from_arguments_that_are_not_an_object():
+    async def go():
+        async with ToolPool(SERVERS) as pool:
+            agent = Agent(pool, "http://unused", "fake")
+            agent.llm = FakeLLM([
+                SimpleNamespace(content="", tool_calls=[tool_call("shop__describe_table", ["products"])]),
+                SimpleNamespace(content="Sorry, I could not look that up.", tool_calls=None),
+            ])
+            res = await agent.run("What columns does products have?")
+            assert res.answer == "Sorry, I could not look that up." and res.steps == 2
+            assert agent.llm.seen[1][-1]["content"] == "arguments must be a JSON object"
+    run(go())
+
+
 def test_agent_stops_at_step_limit():
     async def go():
         async with ToolPool(SERVERS) as pool:
